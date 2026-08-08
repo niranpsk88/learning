@@ -1,4 +1,4 @@
-
+---
 - name: Create directory in root
   hosts: all
   become: true
