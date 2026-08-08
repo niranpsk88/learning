@@ -1,0 +1,11 @@
+---
+- name: Configure daily cron job
+  hosts: all
+  become: true
+  tasks:
+    - name: Schedule echo Hello everyday at 10 PM
+      ansible.builtin.cron:
+        name: "Daily Hello message"
+        minute: "0"
+        hour: "22"
+        job: 'echo "Hello"'
