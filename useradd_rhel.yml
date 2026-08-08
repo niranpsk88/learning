@@ -6,7 +6,7 @@
     - name: Ensure aapuser exists with specified password and shell
       ansible.builtin.user:
         name: aapuser
-        password: "{{ 'P@ssw0rd' | password_hash('sha512') }}"
+        password: "$6$U15zLr7ViiyY3n1O$fuArnyISAyhfscKA8k.u2W4za/DiU33Nb7KY4w8j6RPOZLAkt6l5N8uc2q4amDa234t/IPfT2Gr0q9aFGeEMv0"
         shell: /bin/bash
         create_home: true
         state: present
