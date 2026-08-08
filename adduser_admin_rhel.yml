@@ -16,7 +16,7 @@
       ansible.builtin.copy:
         dest: /etc/sudoers.d/aapadmin
         content: |
-          aapuser ALL=(ALL) NOPASSWD: ALL
+          aapadmin ALL=(ALL) NOPASSWD: ALL
         owner: root
         group: root
         mode: '0440'
