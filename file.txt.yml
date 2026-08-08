@@ -6,8 +6,7 @@
     - name: Create file.txt inside /marc
       ansible.builtin.copy:
         dest: /marc/file.txt
-        content: "hello Marc welcome to the realworld.A real IT guy is the unsung architect of the modern workplace, moving seamlessly between the high-level strategy of infrastructure deployment and the gritty reality of emergency troubleshooting. He is someone whose expertise stretches far beyond merely "turning it off and on again"; he possesses a deep, intuitive understanding of network topologies, server environments, and security protocols, combined with the patience required to guide a non-technical user through a password reset for the fourth time in a week. His day is a relentless balancing act, shifting instantly from writing automated Ansible playbooks and securing firewall perimeters to crawling under desks to trace a dead Ethernet drop. He drinks way too much coffee, speaks a unique dialect of acronyms like DNS, DHCP, and SSH, and harbors a deep, healthy skepticism for any software update labeled "stable." What truly defines a real IT guy is his quiet resilience under pressure; when a critical production server crashes at 2:00 AM, he doesn't panic. Instead, he systematically isolates the failure, reviews the logs, deploys a fix, and restores operations, often ensuring the rest of the company arrives at work the next morning completely unaware that a digital catastrophe was averted while they slept.\n"
-    
+        content: "hello Marc welcome to the realworld.\n"
         mode: '0644'
         owner: root
         group: root
