@@ -1,0 +1,23 @@
+---
+- name: Create aapuser with passwordless root sudo
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Create grace
+      ansible.builtin.user:
+        name: aapuser
+        password: '$6$U15zLr7ViiyY3n1O$fuArnyISAyhfscKA8k.u2W4za/DiU33Nb7KY4w8j6RPOZLAkt6l5N8uc2q4amDa234t/IPfT2Gr0q9aFGeEMv0'
+        shell: /bin/bash
+        create_home: true
+        state: present
+
+    - name: Configure passwordless sudo for aapuser
+      ansible.builtin.copy:
+        dest: /etc/sudoers.d/aapuser
+        content: |
+          aapuser ALL=(ALL) NOPASSWD: ALL
+        owner: root
+        group: root
+        mode: '0440'
+        validate: '/usr/sbin/visudo -cf %s'
