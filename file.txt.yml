@@ -1,0 +1,12 @@
+---
+- name: Create file with welcome message
+  hosts: all
+  become: true
+  tasks:
+    - name: Create file.txt inside /marc
+      ansible.builtin.copy:
+        dest: /marc/file.txt
+        content: "hello Marc welcome to the realworld.\n"
+        mode: '0644'
+        owner: root
+        group: root
