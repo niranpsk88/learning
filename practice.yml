@@ -1,1 +1,12 @@
 ---
+- name: Create directory in root
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure /marc directory exists
+      ansible.builtin.file:
+        path: /marc
+        state: directory
+        mode: '0755'
+        owner: root
+        group: root
