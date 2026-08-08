@@ -1,1 +1,12 @@
-
+---
+- name: Create aapuser on RHEL 9.8
+  hosts: all
+  become: true
+  tasks:
+    - name: Ensure aapuser exists with specified password and shell
+      ansible.builtin.user:
+        name: aapuser
+        password: "{{ 'P@ssw0rd' | password_hash('sha512') }}"
+        shell: /bin/bash
+        create_home: true
+        state: present
